@@ -1,1 +1,1 @@
-# To-do-App
+This Python script implements a simple task management application. Users can add tasks, update existing tasks, delete tasks, view all tasks, and exit the application. Upon starting, users input the number of tasks they want to manage for the day. Tasks are stored in a list and displayed initially. The program continues to run until the user chooses to exit. It provides a menu-driven interface for seamless task management.
