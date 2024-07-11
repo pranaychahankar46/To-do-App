@@ -1,58 +1,41 @@
 def task():
-    tasks = []  # Empty list to store tasks
-    print("---- WELCOME TO TASK MANAGEMENT APP ----")
+    tasks = [] #empty list
+    print("----WELCOME TO TASK MANAGEMENT APP----")
 
     total_task = int(input("Enter how many tasks you want to add = "))
-    for i in range(1, total_task + 1):
+    for i in range(1, total_task+1):
         task_name = input(f"Enter task {i} = ")
         tasks.append(task_name)
 
-    print(f"Today's tasks are:\n{tasks}")
+    print(f"Today's tasks are\n{tasks}")
 
     while True:
-        print("MENU:")
-        print("1 - Add Task")
-        print("2 - Update Task")
-        print("3 - Delete Task")
-        print("4 - View Tasks")
-        print("5 - Exit/Stop")
-        
-        operation = int(input("Enter your choice : "))
-        
+        operation = int(input("Enter 1-Add\n2-Update\n3-Delete\n4-View\n5-Exit/Stop/"))
         if operation == 1:
             add = input("Enter task you want to add = ")
             tasks.append(add)
-            print(f"Task '{add}' has been successfully added.")
+            print(f"Task {add} has been successfully added...")
 
         elif operation == 2:
             updated_val = input("Enter the task name you want to update = ")
             if updated_val in tasks:
-                new_task = input("Enter new task = ")
+                up = input("Enter new task = ")
                 ind = tasks.index(updated_val)
-                tasks[ind] = new_task
-                print(f"Task '{updated_val}' has been updated to '{new_task}'.")
-            else:
-                print(f"Task '{updated_val}' not found.")
+                tasks[ind] = up
+                print(f"Updated task {up}")
 
         elif operation == 3:
-            delete_val = input("Enter the task name you want to delete = ")
-            if delete_val in tasks:
-                tasks.remove(delete_val)
-                print(f"Task '{delete_val}' has been deleted.")
-            else:
-                print(f"Task '{delete_val}' not found.")
+            del_val = input("Which task you want to delete = ")
+            if del_val in tasks:
+                ind = tasks.index(del_val)
+                del tasks[ind]
+                print(f"Task {del_val} has been deleted...")
 
         elif operation == 4:
-            print("Today's tasks are :")
-            for task in tasks:
-                print(task)
+            print(f"Total tasks = {tasks}")
 
         elif operation == 5:
-            print("Exiting Task Management App. Goodbye!")
+            print("Closing the program...")
             break
-
         else:
-            print("Invalid choice. Please enter a number from 1 to 5.")
-
-if __name__ == "__main__":
-    task()
+            print("Invalid input")
